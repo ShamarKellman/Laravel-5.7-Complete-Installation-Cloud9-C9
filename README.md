@@ -10,7 +10,7 @@
 
 Use this command in one line on the cloud9 workspace console:
 
-` wget "https://raw.githubusercontent.com/dev-nowornet/Laravel-5.7-Complete-Installation-Cloud9-C9/master/laravel.sh" && bash laravel.sh `
+` wget "https://raw.githubusercontent.com/ShamarKellman/Laravel-5.7-Complete-Installation-Cloud9-C9/master/laravel.sh" && bash laravel.sh `
 
 ### PHPMYADMIN - ADDED VERSION : if you wish a beta forced phpmyadmin version, use this command instead:
 
