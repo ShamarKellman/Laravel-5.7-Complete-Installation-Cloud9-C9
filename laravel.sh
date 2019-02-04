@@ -23,18 +23,15 @@ rm -rf ./composer
 #
 printf '%s\n' ':%s/DocumentRoot\ \/home\/ubuntu\/workspace/DocumentRoot\ \/home\/ubuntu\/workspace\/public/g' 'x'  | sudo ex /etc/apache2/sites-enabled/001-cloud9.conf
 
-#Select and install the mysql version 5.7 or up
-#
-# wget https://dev.mysql.com/get/mysql-apt-config_0.8.9-1_all.deb
-#sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
-#sudo service apache2 restart
-#sudo apt-get update
-#sudo apt-get install mysql-server -y 
-#sudo service  mysql restart 
-#sudo mysql_upgrade
+#Select and install the mariaDB 10
+sudo apt-get install software-properties-common 
+sudo apt-key adv --recv-keys -keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db 
+sudo add-apt-repository 'deb http://mirror.jmu.edu/pub/mariadb/repo/10.1/ubuntu trusty main'
 
-sudo apt-get update -y
-sudo apt-get install mariadb-server
+apt-get update
+apt-get install mariadb-server
+/usr/bin/mysql_secure_installation
+sudo service mysql start
 
 #Configure database and .env file database=laravel, user=root, no password
 #
