@@ -25,13 +25,16 @@ printf '%s\n' ':%s/DocumentRoot\ \/home\/ubuntu\/workspace/DocumentRoot\ \/home\
 
 #Select and install the mysql version 5.7 or up
 #
-wget https://dev.mysql.com/get/mysql-apt-config_0.8.9-1_all.deb
-sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
-sudo service apache2 restart
-sudo apt-get update
-sudo apt-get install mysql-server -y 
-sudo service  mysql restart 
-sudo mysql_upgrade
+# wget https://dev.mysql.com/get/mysql-apt-config_0.8.9-1_all.deb
+#sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
+#sudo service apache2 restart
+#sudo apt-get update
+#sudo apt-get install mysql-server -y 
+#sudo service  mysql restart 
+#sudo mysql_upgrade
+
+sudo apt-get update -y
+sudo apt-get install mariadb-server
 
 #Configure database and .env file database=laravel, user=root, no password
 #
@@ -48,5 +51,5 @@ php artisan migrate
 #remove laravel installer
 #
 rm -rf laravel.sh
-rm -rf mysql-apt-config_0.8.9-1_all.deb
+#rm -rf mysql-apt-config_0.8.9-1_all.deb
 #Edited by Bretfelean Sorin Cristian
